@@ -11,7 +11,7 @@ RUN apt update && \
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9 && \
     add-apt-repository 'deb https://cloud.r-project.org/bin/linux/ubuntu bionic-cran40/' && \
     apt update && ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone && \
-    apt install -y --no-install-recommends r-base && \
+    apt install -y --no-install-recommends r-base build-essential && \
     rm -rf /var/lib/apt/lists/*
 
 RUN Rscript -e "install.packages('Rcpp')" && \
