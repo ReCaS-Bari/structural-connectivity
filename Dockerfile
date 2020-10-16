@@ -3,7 +3,7 @@ FROM ubuntu:18.04
 ENV TZ=Europe/Rome
 
 RUN apt update && \
-    apt install -y gnupg gnupg2 gnupg1 software-properties-common curl && \
+    apt install -y gnupg gnupg2 gnupg1 software-properties-common curl python-keystoneclient python-swiftclient && \
     rm -rf /var/lib/apt/lists/*
 
 # install r-base
